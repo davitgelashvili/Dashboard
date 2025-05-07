@@ -1,7 +1,7 @@
 const express = require("express");
 const mainRouter = express.Router();
 
-const blogRouter = require("./allRouter/blogRouter.js");
+const carsRouter = require("./allRouter/CarsRouter.js");
 const uploadRouter = require("./allRouter/uploadPhotoRouter.js");
 
 mainRouter.get('/', (req, res) => {
@@ -9,7 +9,7 @@ mainRouter.get('/', (req, res) => {
 });
 
 // როუტერის გამოყენება
-mainRouter.use("/blogs", blogRouter); // ყველა /blogs-თან დაკავშირებული როუტი
-mainRouter.use("/upload", uploadRouter); // ყველა /blogs-თან დაკავშირებული როუტი
+mainRouter.use("/cars", carsRouter);
+mainRouter.use("/upload", uploadRouter);
 
 module.exports = mainRouter;

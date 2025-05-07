@@ -1,0 +1,21 @@
+.slider {
+    width: 100%;
+    height: calc(100vh - 270px);
+    display: flex;
+    align-items: center;
+    
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        align-self: center;
+    }
+
+    &__btn {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+    }
+}

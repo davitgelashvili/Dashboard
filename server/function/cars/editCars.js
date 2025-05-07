@@ -1,8 +1,8 @@
-const table = require("../../table/blog");
+const table = require("../../table/cars");
 
-const editBlog = async (req, res) => {
+const editCars = async (req, res) => {
   try {
-    const { title, body, cover } = req.body;
+    const { title, body, cover, fwd, kolofi, dzravi, price } = req.body;
     const { id } = req.params;
 
     const updatedBlog = await table.findByIdAndUpdate(
@@ -10,7 +10,11 @@ const editBlog = async (req, res) => {
       {
         title,
         body,
+        price,
         cover,
+        fwd,
+        kolofi,
+        dzravi
         // updatedAt: new Date(), // დაამატე განახლების თარიღი
       },
       { new: true }
@@ -27,4 +31,4 @@ const editBlog = async (req, res) => {
   }
 };
 
-module.exports = { editBlog };
+module.exports = { editCars };

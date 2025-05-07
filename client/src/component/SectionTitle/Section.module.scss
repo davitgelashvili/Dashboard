@@ -1,0 +1,19 @@
+.section {
+    padding: 68px 0;
+    position: relative;
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        
+        h1 {
+            // color: #00456d;
+            // color: #013157;
+            color: #04294f;
+            margin: 0;
+        }
+    }
+
+}

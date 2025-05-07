@@ -1,0 +1,13 @@
+.btn {
+    background-image: linear-gradient(to right, #006c9e 0%, #004c76 51%, #012d53 100%);
+    padding: 11px 18px;
+    border-radius: 10px;
+    display: block;
+    background-position: right center;
+    color: #fff;
+    translate: 1s;
+
+    &:hover {
+        background-image: linear-gradient(to right, #004c76 0%, #006c9e 50%, #012d53 100%);
+    }
+}

@@ -1,0 +1,37 @@
+.header {
+    background-color: #fff;
+    width: 100%;
+    padding: 16px 0;
+
+    &__call {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+    }
+
+    &__logo {
+        display: block;
+
+        img {
+            height: 44px;
+        }
+    }
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style: none;
+        padding-left: -15px;
+        padding-right: -15px;
+
+        a {
+            display: block;
+            margin: 6px 15px;
+            text-decoration: none;
+            color: #2a2a2a;
+        }
+    }
+}

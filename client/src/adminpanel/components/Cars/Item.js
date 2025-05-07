@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Blog.module.scss'
+import styles from './Cars.module.scss'
 
 export default function Item({ item, title, body, cover, createDate }) {
 

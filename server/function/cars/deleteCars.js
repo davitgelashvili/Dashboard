@@ -1,12 +1,12 @@
-const table = require("../../table/blog");
+const table = require("../../table/cars");
 
-const deleteBlog = async (req, res) => {
+const deleteCars = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const deletedBlog = await table.findByIdAndDelete(id);
+    const deleteCars = await table.findByIdAndDelete(id);
 
-    if (!deletedBlog) {
+    if (!deleteCars) {
       return res.status(404).send("ბლოგი ვერ მოიძებნა წასაშლელად");
     }
 
@@ -17,4 +17,4 @@ const deleteBlog = async (req, res) => {
   }
 };
 
-module.exports = { deleteBlog };
+module.exports = { deleteCars };

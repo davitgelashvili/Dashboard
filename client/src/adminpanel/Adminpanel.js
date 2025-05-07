@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Route, Routes } from 'react-router'
-import BlogPage from './page/blog/blog'
+import CarsPage from './page/cars/cars'
 import AboutPage from './page/about/about'
 import Sidebar from './components/Sidebar/Sidebar'
 
@@ -21,7 +21,7 @@ export default function Adminpanel() {
                     <div className='col' style={{maxWidth: '100%'}}>
                         <Routes>
                             <Route path='/' element={<h1>dashboard</h1>} />
-                            <Route path='/blog*' element={<BlogPage />} />
+                            <Route path='/cars*' element={<CarsPage />} />
                             <Route path='/about*' element={<AboutPage />} />
                         </Routes>
                     </div>

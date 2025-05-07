@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import getApi from '../../../http/getApi';
 import Item from './Item';
-import styles from './Blog.module.scss';
+import styles from './Cars.module.scss';
 import { Link } from 'react-router';
 
-export default function BlogList() {
+export default function CarsList() {
     const [data, setData] = useState([]);
     const [params, setParams] = useState({
         page: 1,
@@ -16,7 +16,7 @@ export default function BlogList() {
         async function fetchData() {
             try {
                 const queryString = new URLSearchParams(params).toString();
-                const blogs = await getApi.getData(`/blogs?${queryString}`);
+                const blogs = await getApi.getData(`/cars?${queryString}`);
                 setData(blogs.data); // თუ გაქვს pagination სტრუქტურა, დაარეგულირე
                 setTotalPages(blogs.totalPages); // თუ გიგზავნის საერთო გვერდებს
             } catch (err) {
@@ -32,7 +32,7 @@ export default function BlogList() {
         if (!confirm) return;
 
         try {
-            await getApi.deleteData(`/blogs/${id}`);
+            await getApi.deleteData(`/cars/${id}`);
             setData(prev => prev.filter(blog => blog._id !== id));
             alert('წაშლა წარმატებით დასრულდა');
         } catch (err) {
@@ -55,17 +55,21 @@ export default function BlogList() {
 
     return (
         <div className={styles.blog}>
-            <Item
-                title={'სახელი'}
-                createDate={'თარიღი'}
-                body={''}
-                cover={''}
-            />
+            <Link to={'/adminpanel/cars/add'}>დამატება</Link>
+            <div className='d-flex justify-content-between'>
+                <Item
+                    title={'სახელი'}
+                    createDate={'თარიღი'}
+                    body={''}
+                    cover={''}
+                />
+                <div className={styles.blog__delete}>delete</div>
+            </div>
             {data?.map((item) => (
                 <div key={item._id} className='d-flex justify-content-between'>
-                    <Link to={`${item._id}`}>
+                    <Link to={`${item._id}`} className={styles.blog__link}>
                         <Item
-                            title={item.title.ka}
+                            title={item.title}
                             cover={item.cover}
                             createDate={item.createDate}
                         />

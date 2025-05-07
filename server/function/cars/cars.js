@@ -1,6 +1,6 @@
-const table = require("../../table/blog");
+const table = require("../../table/cars");
 
-const getBlog = async (req, res) => {
+const getCars = async (req, res) => {
   const page = parseInt(req.query.page) || 1; // რომელ გვერდზეა მომხმარებელი
   const limit = parseInt(req.query.limit) || 3; // რამდენი ელემენტი ერთ გვერდზე
 
@@ -8,16 +8,16 @@ const getBlog = async (req, res) => {
   
   try {
     const total = await table.countDocuments(); // სულ რამდენი ჩანაწერია
-    const blogs = await table.find()
+    const Cars = await table.find()
       .skip(startIndex)
       .limit(limit)
-      .sort({ createdAt: -1 }); // სურვილისამებრ, ბოლო ჩანაწერები პირველები
+      .sort({ createDate: -1 }); // სურვილისამებრ, ბოლო ჩანაწერები პირველები
 
     return res.status(200).json({
       totalPages: Math.ceil(total / limit),
       currentPage: page,
       totalItems: total,
-      data: blogs
+      data: Cars
     });
   } catch (error) {
     console.error(error);
@@ -25,4 +25,4 @@ const getBlog = async (req, res) => {
   }
 };
 
-module.exports = { getBlog };
+module.exports = { getCars };

@@ -17,6 +17,7 @@ export default function Content({ title, children, language, setLanguage }) {
                 <div>
                     <button onClick={() => open('ka')}>geo</button>
                     <button onClick={() => open('en')}>eng</button>
+                    <button onClick={() => open('ru')}>ru</button>
                 </div>
                 {selectedContent}
             </div>

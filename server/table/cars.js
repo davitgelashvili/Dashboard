@@ -3,16 +3,21 @@ const mongoose = require("mongoose");
 
 const MultilangText = {
     ka: { type: String, required: false },
+    ru: { type: String, required: false },
     en: { type: String, required: false }
 };
 
-const BlogSchema = new mongoose.Schema({
+const CarsSchema = new mongoose.Schema({
     createDate: {
         type: Date,
         default: Date.now
     },
     title: {
-        type: MultilangText,
+        type: String,
+        required: false,
+    },
+    price: {
+        type: String,
         required: false,
     },
     body: {
@@ -23,6 +28,18 @@ const BlogSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
+    fwd: {
+        type: String,
+        required: false,
+    },
+    kolofi: {
+        type: String,
+        required: false,
+    },
+    dzravi: {
+        type: String,
+        required: false,
+    },
 });
 
-module.exports = mongoose.model("blog", BlogSchema);
+module.exports = mongoose.model("cars", CarsSchema);

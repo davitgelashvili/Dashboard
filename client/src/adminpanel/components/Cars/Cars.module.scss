@@ -1,5 +1,9 @@
 .blog {
     max-width: 600px;
+
+    &__link {
+        display: block;
+    }
 }
 
 .item {
@@ -11,11 +15,13 @@
 
 
     &__in {
-        width: calc(100% / 3);
+        width: calc(100% / 4);
         display: flex;
         align-items: center;
         color: #000;
         text-decoration: none;
+        text-wrap: nowrap;
+        overflow: hidden;
 
         img {
             width: 50px;

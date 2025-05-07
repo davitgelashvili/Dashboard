@@ -11,32 +11,9 @@ export default function Sidebar() {
             url: '/adminpanel'
         },
         {
-            _id: '12dsad2',
-            title: 'ბლოგი',
-            links: [
-                {
-                    title: 'ბლოგის ჩამონათვალი',
-                    url: '/adminpanel/blog'
-                },
-                {
-                    title: 'ბლოგის დამატება',
-                    url: '/adminpanel/blog/add'
-                },
-            ]
-        },
-        {
-            _id: '352gds',
-            title: 'ჩვენს შესახებ',
-            links: [
-                {
-                    title: 'ბლოგის ჩამონათვალი',
-                    url: '/adminpanel/blog'
-                },
-                {
-                    title: 'ბლოგის დამატება',
-                    url: '/adminpanel/addblog'
-                },
-            ]
+            _id: '2352gfef',
+            title: 'მანქანები',
+            url: '/adminpanel/cars'
         },
     ]
 
